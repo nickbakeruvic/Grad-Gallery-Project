@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Yearbook 2020 Grad Submissions</title>
+   
+ 
+</head>
+
+<body>
+
+    <div id="wrapper"> 	 	 	
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" >
+		
+            <fieldset>
+                <legend>Yearbook Grad Submission</legend>
+				
+                <div>
+                    <input type="text" name="first" placeholder="First Name" value="<?php echo $firstName?>">
+					<span style="color: red;font-size: 10px;"><?php echo $firstNameErr;?><br></span>
+                </div>
+                <div>
+                    <input type="text" name="last" placeholder="Last Name" value="<?php echo $lastName?>">
+					<span style="color: red;font-size: 10px;"><?php echo $lastNameErr;?><br></span>
+                </div>
+		
+
+		<div>
+			<input type="file" name="fileUpload" id="fileUpload" value="<?php echo $file;?>">
+			<span style="color: red;font-size: 10px;"><?php echo $fileErr;?><br></span>
+		</div>
+		
+            <div>
+				<span style="color: red;font-size: 10px;"><?php echo $descriptionErr;?><br></span>
+				<textarea name="description" placeholder="Description of image"><?php echo $description ?></textarea>
+            </div>
+
+                <div>
+					<span style="color: red;font-size: 10px;"><?php echo $tagsErr;?><br></span>
+                    <textarea name="tags" placeholder="Tag the image with names or phrases, separated by comma"><?php echo $tags ?></textarea>
+                </div>
+		
+		<div>
+			<span style="color: red;font-size: 10px;"><?php echo $privacyErr;?><br></span>
+			Privacy settings:
+			<br><br>
+			<input type="radio" name="privacy" <?php if ($privacy=="public") echo "checked";?> value="public">public<br>
+			<input type="radio" name="privacy" <?php if ($privacy=="private") echo "checked";?> value="private">private<br><br>
+		</div>
+
+		<div>
+			<span style="color: red;font-size: 10px;"><?php echo $agreementErr;?><br></span>
+			<input type="checkbox" name="agreement" <?php if ($agreement == "checked"){ echo $agreement;}?>> I retain the copyright to this image and release it for use on this site.
+		</div>
+		
+ 
+		<br><br>
+		<input type="submit" name="submit" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" name="reset" value="reset">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<a style=" background: #222;
+        border: none;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+        text-transform:uppercase;
+        color: #eee;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 5px 0;
+        padding: 5px 22px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-border-radius:4px;
+        -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+		text-decoration:none;" href="?page=gallery">Gallery</a>
+        </fieldset>    
+        </form>
+    </div>
+</body>
+</html>

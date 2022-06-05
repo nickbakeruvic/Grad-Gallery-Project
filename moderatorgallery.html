@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="gallery.css">
+</head>
+<body onload = "setGlobals(), notifyResize()" onresize="notifyResize()">
+<div id = "lightbox">
+</div>
+<form id = "form" name="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" >
+
+<table class = "topnav" style='width:98%; cellpadding:0; table-layout:fixed;'>
+    <tr  align="left">
+		<td  class="uploadContainer" style='width: 10%;'>
+			<CENTER><a href="?page=userUpload">Upload an Image<br style="font-size:20px">
+			<img src="assets/Webp.net-resizeimage (57).png"></a></CENTER>
+			<td style="width:10%;">
+	
+			</td>
+		<td>
+		<td class="titleContainer" style='width: 42%'><CENTER>Mount Doug Grad Gallery</CENTER></td>
+		<td class="search-container" style='width: 25%;text-align:right'>
+			<input autofocus type="text" id="searchbox" name="search" value="<?php if ($search !=  'Akjldsaflkjbsafd890123840-') { echo $search;}?>" placeholder="Search..."  onfocus="var temp_value=this.value; this.value=''; this.value=temp_value"/>
+			
+			<select name="sort" onchange="updateForm()">
+				<option value="date" <?php if ($sort=="date") echo "selected";?> >Sort by date of upload</option>
+				<option value="last" <?php if ($sort=="last") echo "selected";?>>Sort alphabetically by last name</option>
+				<option value="first" <?php if ($sort=="first") echo "selected";?>>Sort alphabetically by first name</option>
+			</select>
+			
+			
+			<td class="spacer" style="width: 1px;">
+			</td>
+		
+			<td class="privacyContainer" style="width: 140px;">
+				<a onclick="setLogin()"><img src="assets/login.png"></a></CENTER>
+				<input type="hidden" name="login" id="login" value="" />
+			</td>
+			<td class="spacer" style="width: 1px;">
+			</td>
+		</td>
+	</tr>
+</table>
+<div id ="phpdata">
+	 <input type="hidden" id="searchphp" value="<?php echo ($search); ?>" />
+	 <input type="hidden" id="privacyphp" value="<?php echo ($showPrivacy); ?>" />
+	 <input type="hidden" id="sortphp" value="<?php echo ($sort); ?>" />
+	 <input type="hidden" id="editorphp" value="<?php echo ($isEditor); ?>" />
+</div>
+<input type="hidden" name="postvar" value="" />
+</form>
+
+
+<div id="id01" ></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="?page=resetGallery">Reset Gallery</a><br><br>
+
+<script src="gallery.js">
+
+    
+
+</script>
+
+</body>
+</html>
