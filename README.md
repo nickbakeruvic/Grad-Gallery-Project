@@ -1,4 +1,4 @@
-# Grad-Gallery-Project
+# Photo-Gallery-Project
 
 Proof-of-concept website for highschool grads to upload their baby photos. 
 
